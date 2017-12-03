@@ -4,6 +4,7 @@ import com.epam.lab.dao.ReadMetaData;
 import com.epam.lab.service.AddressService;
 import com.epam.lab.service.DepartmentService;
 import com.epam.lab.service.MySqlService;
+import com.epam.lab.service.StudentService;
 
 import java.sql.Connection;
 
@@ -15,16 +16,17 @@ public class App {
         MySqlService mySqlService = new MySqlService();
         Connection connection = mySqlService.getConnection();
 
+        StudentService.printAddressCrud(connection);
 
-        ReadMetaData metaData = new ReadMetaData();
+//        ReadMetaData metaData = new ReadMetaData();
 
-        AddressService.printAddressCrud(connection);
+//        AddressService.printAddressCrud(connection);
 
 //        DepartmentService.printDepartmentCrud(connection);
 
         System.out.println("____________________________________________");
         System.out.println("READ METADATA");
-        metaData.readMetaData(connection);
+//        metaData.readMetaData(connection);
         System.out.println("____________________________________________");
 
         mySqlService.disconnect();

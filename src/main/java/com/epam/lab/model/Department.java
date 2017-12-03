@@ -48,4 +48,13 @@ public class Department {
         result = 31 * result + (InstituteName != null ? InstituteName.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "idDept=" + idDept +
+                ", DeptName='" + DeptName + '\'' +
+                ", InstituteName='" + InstituteName + '\'' +
+                '}';
+    }
 }
