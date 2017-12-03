@@ -99,10 +99,10 @@ public class DepartmentDao implements CRUD<Department> {
     }
 
     @Override
-    public void delete(Connection connection, Integer id) {
-        String deleteSQL = "DELETE FROM departments WHERE id_dept = ?;";
+    public void delete(Connection connection, Integer currentDepartmentId) {
+        String deleteSQL = "DELETE FROM department WHERE id_dept = ?;";
         try (PreparedStatement preparedStatement = connection.prepareStatement(deleteSQL)) {
-            PreparedStatement preparedStatementPopulated = departmentTransformer.transformID(preparedStatement, id);
+            PreparedStatement preparedStatementPopulated = departmentTransformer.transformID(preparedStatement, currentDepartmentId);
             preparedStatementPopulated.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

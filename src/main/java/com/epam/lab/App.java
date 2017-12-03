@@ -13,20 +13,29 @@ import java.sql.Connection;
  */
 public class App {
     public static void main(String[] args) {
+        /*
+         TASK 1
+         */
         MySqlService mySqlService = new MySqlService();
         Connection connection = mySqlService.getConnection();
 
         StudentService.printAddressCrud(connection);
 
-//        ReadMetaData metaData = new ReadMetaData();
+        AddressService.printAddressCrud(connection);
+        mySqlService.disconnect();
 
-//        AddressService.printAddressCrud(connection);
 
-//        DepartmentService.printDepartmentCrud(connection);
+        /*
+         TASK 2
+         */
+        mySqlService = new MySqlService();
+        connection = mySqlService.getConnection();
+        DepartmentService.printDepartmentCrud(connection);
 
         System.out.println("____________________________________________");
         System.out.println("READ METADATA");
-//        metaData.readMetaData(connection);
+        ReadMetaData metaData = new ReadMetaData();
+        metaData.readMetaData(connection);
         System.out.println("____________________________________________");
 
         mySqlService.disconnect();

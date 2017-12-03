@@ -15,7 +15,7 @@ public class Student {
     private Integer specialtyId;
     private Integer parentsId;
     private Integer examId;
-    private String group;
+    private String groupName;
     private String learningForm;
     private Department department;
 
@@ -75,12 +75,12 @@ public class Student {
         this.birthdayData = birthdayData;
     }
 
-    public String getGroup() {
-        return group;
+    public String getGroupName() {
+        return groupName;
     }
 
-    public void setGroup(String group) {
-        this.group = group;
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
     }
 
     public String getLearningForm() {
@@ -160,7 +160,7 @@ public class Student {
         if (specialtyId != null ? !specialtyId.equals(student.specialtyId) : student.specialtyId != null) return false;
         if (parentsId != null ? !parentsId.equals(student.parentsId) : student.parentsId != null) return false;
         if (examId != null ? !examId.equals(student.examId) : student.examId != null) return false;
-        if (group != null ? !group.equals(student.group) : student.group != null) return false;
+        if (groupName != null ? !groupName.equals(student.groupName) : student.groupName != null) return false;
         if (learningForm != null ? !learningForm.equals(student.learningForm) : student.learningForm != null)
             return false;
         return department != null ? department.equals(student.department) : student.department == null;
@@ -180,7 +180,7 @@ public class Student {
         result = 31 * result + (specialtyId != null ? specialtyId.hashCode() : 0);
         result = 31 * result + (parentsId != null ? parentsId.hashCode() : 0);
         result = 31 * result + (examId != null ? examId.hashCode() : 0);
-        result = 31 * result + (group != null ? group.hashCode() : 0);
+        result = 31 * result + (groupName != null ? groupName.hashCode() : 0);
         result = 31 * result + (learningForm != null ? learningForm.hashCode() : 0);
         result = 31 * result + (department != null ? department.hashCode() : 0);
         return result;
@@ -201,7 +201,7 @@ public class Student {
                 ", specialtyId=" + specialtyId +
                 ", parentsId=" + parentsId +
                 ", examId=" + examId +
-                ", group='" + group + '\'' +
+                ", groupName='" + groupName + '\'' +
                 ", learningForm='" + learningForm + '\'' +
                 ", department=" + department +
                 '}';
