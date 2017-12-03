@@ -8,14 +8,9 @@ import com.epam.lab.service.StudentService;
 
 import java.sql.Connection;
 
-/**
- * Hello world!
- */
+
 public class App {
     public static void main(String[] args) {
-        /*
-         TASK 1
-         */
         MySqlService mySqlService = new MySqlService();
         Connection connection = mySqlService.getConnection();
 
@@ -25,9 +20,6 @@ public class App {
         mySqlService.disconnect();
 
 
-        /*
-         TASK 2
-         */
         mySqlService = new MySqlService();
         connection = mySqlService.getConnection();
         DepartmentService.printDepartmentCrud(connection);
